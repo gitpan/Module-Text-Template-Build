@@ -1,0 +1,33 @@
+commit a88bd31bc6af3a1b743d9f67892ec5523a8f3afc (refs/heads/master)
+Author: nadim khemir <nkh@cpan.org>
+Date:   Sun Jan 11 23:33:17 2009 +0100
+
+    ADDED: default template installation
+
+commit ae9e019f61376389d7437334185cdcffd309180b
+Author: nadim khemir <nkh@cpan.org>
+Date:   Sun Jan 11 23:01:50 2009 +0100
+
+    ADDED: test module creation
+    ADDED: help
+    CHANGED: fine tuned template
+
+commit ba99912d79100c9d1bc187daf34348a12631dc9e
+Author: nadim khemir <nadim@naquadim.(none)>
+Date:   Fri Jan 2 01:02:38 2009 +0100
+
+    FIXED: input from user has to come from STDIN
+    FIXED: error in year constant
+
+commit 86a26f1530704e0bb37d1528a2d7751346c7e2ba
+Author: nadim khemir <nadim@naquadim.(none)>
+Date:   Fri Jan 2 00:48:24 2009 +0100
+
+    FIXED: removed perl critic errors
+    CAHNGED: perl critic options
+
+commit 9daf70c0cf99adf379b7486f1b3a80cb910d5448
+Author: nadim khemir <nadim@naquadim.(none)>
+Date:   Fri Jan 2 00:12:49 2009 +0100
+
+    ADDED: Initial commit
