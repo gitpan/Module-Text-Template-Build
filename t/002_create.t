@@ -18,6 +18,7 @@ use Directory::Scratch::Structured  qw(piggyback_directory_scratch) ;
 
 use Test::File::Contents ;
 use Test::Command ;
+use File::Slurp ;
 
 use Module::Text::Template::Build ;
 {
@@ -126,12 +127,23 @@ SKIP:
 
 	exit_is_num('perl Build.PL', 0, 'run perl Build.PL');
 	ok( -e 'Build', 'Build exists') ;
-	exit_is_num('./Build', 0, 'Build module') ;
-	exit_is_num('./Build test', 0, 'Build test') ;
-	exit_is_num('./Build dist', 0, 'Build dist') ;
+
+	my $build = Test::Command->new(cmd => './Build') ;
+	exit_is_num($build, 0, 'build module') 
+		or diag "STDOUT:\n" . read_file($build->{result}{stderr_file}) ;
+
+        my $test = Test::Command->new( cmd => './Build test') ;
+	exit_is_num($test, 0, 'test module')
+		or diag "STDOUT:\n" . read_file($build->{result}{stderr_file}) ;
+				
+        my $build_distribution = Test::Command->new( cmd => './Build dist') ;
+	exit_is_num($build_distribution, 0, 'build distribution')
+		or diag "STDOUT:\n" . read_file($build->{result}{stderr_file}) ;
+
 	ok( -e 'Testing-This-Module-0.01.tar.gz', 'distribution exists') ,
 
 	chdir $start_directory ;
 	}
+
 }
 

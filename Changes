@@ -1,4 +1,10 @@
-commit a88bd31bc6af3a1b743d9f67892ec5523a8f3afc (refs/heads/master)
+commit 390946ae9035bd83905fcb887739c8118cb05b3d (refs/heads/master)
+Author: nadim khemir <nkh@cpan.org>
+Date:   Tue Jan 13 11:41:20 2009 +0100
+
+    ADDED: stdout output if test fails
+
+commit a88bd31bc6af3a1b743d9f67892ec5523a8f3afc
 Author: nadim khemir <nkh@cpan.org>
 Date:   Sun Jan 11 23:33:17 2009 +0100
 
