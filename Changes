@@ -1,4 +1,10 @@
-commit 390946ae9035bd83905fcb887739c8118cb05b3d (refs/heads/master)
+commit 0f452e5bb652e2aa1f83f11c7ffe62286877cd19 (refs/heads/master)
+Author: nadim khemir <nkh@cpan.org>
+Date:   Tue Jan 13 11:49:31 2009 +0100
+
+    FIXED: displaying stderr output from the wrong test
+
+commit 390946ae9035bd83905fcb887739c8118cb05b3d
 Author: nadim khemir <nkh@cpan.org>
 Date:   Tue Jan 13 11:41:20 2009 +0100
 

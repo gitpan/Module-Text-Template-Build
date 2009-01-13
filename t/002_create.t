@@ -134,11 +134,11 @@ SKIP:
 
         my $test = Test::Command->new( cmd => './Build test') ;
 	exit_is_num($test, 0, 'test module')
-		or diag "STDOUT:\n" . read_file($build->{result}{stderr_file}) ;
+		or diag "STDOUT:\n" . read_file($test->{result}{stderr_file}) ;
 				
         my $build_distribution = Test::Command->new( cmd => './Build dist') ;
 	exit_is_num($build_distribution, 0, 'build distribution')
-		or diag "STDOUT:\n" . read_file($build->{result}{stderr_file}) ;
+		or diag "STDOUT:\n" . read_file($build_distribution->{result}{stderr_file}) ;
 
 	ok( -e 'Testing-This-Module-0.01.tar.gz', 'distribution exists') ,
 
