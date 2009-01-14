@@ -133,16 +133,18 @@ my $build = $class->new
 	dist_version => GetVersionAndRevisionFrom('lib/{{$MODULE_ROOT . $MODULE_NAME}}.pm'),
 	
 	license => 'perl',
-	
-	requires => 
+	build_requires => 
 		{
-		'Readonly'         => 0,
-		'Sub::Exporter'     => 0,
-		
+		'Text::Diff' => 0,
 		'Test::Block' => 0,
 		'Test::Exception' => 0,
 		'Test::NoWarnings' => 0,
 		'Test::Warn' => 0,
+		},
+	requires => 
+		{
+		'Readonly'         => 0,
+		'Sub::Exporter'     => 0,
 		},
 		
 	pm_files     => \%all_modules,

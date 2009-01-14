@@ -133,26 +133,31 @@ my $build = $class->new
 	dist_version => GetVersionAndRevisionFrom('lib/Module/Text/Template/Build.pm'),
 	
 	license => 'perl',
+	build_requires => 
+		{
+		'Text::Diff' => 0,
+		'Test::Block' => 0,
+		'Test::Exception' => 0,
+		'Test::NoWarnings' => 0,
+		'Test::Warn' => 0,
+		'Directory::Scratch::Structured' => 0,
+		'Test::File::Contents' => 0,
+		'Test::Command' => 0,
+		'Sub::Exporter' => 0,
+		'File::HomeDir'    => 0,
+		'File::Find::Rule' => 0,
+		},
 	
 	requires => 
 		{
+		'Sub::Exporter' => 0,
 		'Readonly'         => 0,
 		'Text::Template'   => 0,
 		'File::Basename'   => 0,
-		'File::HomeDir'    => 0,
-		'File::Find::Rule' => 0,
 		'File::Path'       => 0,
 		'File::Slurp'      => 0,
 		'Module::Util'     => 0,
 		'Data::TreeDumper' => 0,
-
-		'Test::Block'      => 0,
-		'Test::Exception'  => 0,
-		'Test::NoWarnings' => 0,
-		'Test::Warn'       => 0,
-		'Directory::Scratch::Structured' => 0,
-		'Test::File::Contents' => 0,
-		'Test::Command' => 0,
 		},
 		
 	pm_files     => \%all_modules,
