@@ -1,4 +1,10 @@
-commit 0f452e5bb652e2aa1f83f11c7ffe62286877cd19 (refs/heads/master)
+commit a8b24bc998c823f73ea7d9f329b20acdafef079f (refs/heads/master)
+Author: nadim khemir <nkh@cpan.org>
+Date:   Wed Jan 14 21:56:37 2009 +0100
+
+    ADDED: prereq test
+
+commit 0f452e5bb652e2aa1f83f11c7ffe62286877cd19
 Author: nadim khemir <nkh@cpan.org>
 Date:   Tue Jan 13 11:49:31 2009 +0100
 

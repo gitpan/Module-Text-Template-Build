@@ -33,6 +33,8 @@ module_template/xt/author/000_pod_coverage.t
 module_template/xt/author/000_strict.t
 module_template/xt/author/perlcriticrc
 
+module_template/xt/author/dist/000_prereq.t
+
 t/001_load.t
 t/002_create.t
 t/test_template
@@ -46,3 +48,5 @@ xt/author/000_pod.t
 xt/author/000_pod_coverage.t
 xt/author/000_perl_critic.t
 xt/author/perlcriticrc
+
+xt/author/dist/000_prereq.t

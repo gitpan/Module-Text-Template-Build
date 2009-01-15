@@ -1,6 +1,6 @@
 ---
 name: Module-Text-Template-Build
-version: 0.04.7
+version: 0.04.8
 author:
   - 'Khemir Nadim ibn Hamouda. <nadim@khemir.net>'
 abstract: Create a module based on a template to use with Module::Build
