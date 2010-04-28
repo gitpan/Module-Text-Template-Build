@@ -1,4 +1,11 @@
-commit a8b24bc998c823f73ea7d9f329b20acdafef079f (refs/heads/master)
+commit 427a21f36435bc0b59d62c17600a3eff9037ab34 (HEAD, master)
+Author: nadim khemir <nkh@cpan.org>
+Date:   Tue Apr 27 22:32:19 2010 +0200
+
+    ADDED: better error message if the template cna't be evaluated
+    CHANGES: divers changes to the default template
+
+commit a8b24bc998c823f73ea7d9f329b20acdafef079f
 Author: nadim khemir <nkh@cpan.org>
 Date:   Wed Jan 14 21:56:37 2009 +0100
 

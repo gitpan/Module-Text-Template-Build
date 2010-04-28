@@ -79,7 +79,7 @@ sub new
 
 Create a {{$FULL_MODULE_NAME}} .  
 
-  my $object = new {{$FULL_MODULE_NAME}}() ;
+  my $object = {{$FULL_MODULE_NAME}}->new() ;
 
 I<Arguments>
 
@@ -129,6 +129,13 @@ if (@setup_data % 2)
 	{
 	croak "Invalid number of argument '$file_name, $line'!" ;
 	}
+
+$self->{INTERACTION}{INFO} ||= sub {print @_} ;
+$self->{INTERACTION}{WARN} ||= \&Carp::carp ;
+$self->{INTERACTION}{DIE}  ||= \&Carp::croak ;
+$self->{NAME} = 'Anonymous';
+$self->{FILE} = $file_name ;
+$self->{LINE} = $line ;
 
 $self->CheckOptionNames($NEW_ARGUMENTS, @setup_data) ;
 
@@ -181,7 +188,8 @@ if('HASH' eq ref $valid_options)
 	}
 elsif('ARRAY' eq ref $valid_options)
 	{
-	$valid_options = map{$_ => 1} @{$valid_options} ;
+	my @valid_options =  @{$valid_options} ;
+	$valid_options = {map{$_ => 1} @valid_options} ;
 	}
 else
 	{
@@ -194,7 +202,11 @@ for my $option_name (keys %options)
 	{
 	unless(exists $valid_options->{$option_name})
 		{
-		$self->{INTERACTION}{DIE}->("$self->{NAME}: Invalid Option '$option_name' at '$self->{FILE}:$self->{LINE}'!")  ;
+		$self->{INTERACTION}{DIE}->
+				(
+				"$self->{NAME}: Invalid Option '$option_name' at '$self->{FILE}:$self->{LINE}'\nValid options:\n\t"
+				.  join("\n\t", sort keys %{$valid_options}) . "\n"
+				);
 		}
 	}
 
@@ -270,12 +282,24 @@ None so far.
 	CPAN ID: 
 	mailto:
 
-=head1 LICENSE AND COPYRIGHT
+=head1 COPYRIGHT AND LICENSE
 
 #MODIFY_ME_BEFORE_FIRST_RUN
 
-This program is free software; you can redistribute
-it and/or modify it under the same terms as Perl itself.
+Copyright {{$YEAR}} .
+
+This program is free software; you can redistribute it and/or
+modify it under the terms of either:
+
+=over 4
+
+=item * the GNU General Public License as published by the Free
+Software Foundation; either version 1, or (at your option) any
+later version, or
+
+=item * the Artistic License version 2.0.
+
+=back
 
 =head1 SUPPORT
 

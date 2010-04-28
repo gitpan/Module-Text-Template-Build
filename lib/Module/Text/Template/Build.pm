@@ -298,17 +298,17 @@ if(-f $template_file)
 	{
 	my $template = Text::Template->new
 					(
-					  TYPE => 'FILE'
-					, SOURCE => $template_file
-					, DELIMITERS => ['{{', '}}']
-					, BROKEN => \&broken_template_handler
+					TYPE => 'FILE',
+					SOURCE => $template_file,
+					DELIMITERS => ['{{', '}}'],
+					BROKEN => \&broken_template_handler,
 					);
 					
 	my $text = $template->fill_in(HASH => $template_variables) ;
-	
+
 	unless(defined $text)
 		{
-		croak "Error: Can't evaluate template '$module_element_source'.\n" ;
+		croak "Error: Can't evaluate template '$module_element_source':\n\t$Text::Template::ERROR\n" ;
 		}
 	
 	write_file($module_element, $text) or croak "Error: Failed generating image of '$File::Find::name' : $!" ;
@@ -331,7 +331,7 @@ Error handler required by the template system.
 my %args = @_ ;
 croak $args{error} ;
 
-#~ return ; # stop template processing
+return; # stop template processing
 }
 
 #-----------------------------------------------------------------------------------------

@@ -1,4 +1,4 @@
-#!/usr/bin/perl
+#!/usr/bin/perl -T -w
 
 use strict ;
 use warnings ;
@@ -31,7 +31,9 @@ use Carp ;
 
 #------------------------------------------------------------------------------------------------------------------------
 
+use Getopt::Long ;
 use IO::Select ;
+use English qw( -no_match_vars ) ;
 
 our $VERSION = '0.01' ;
 
@@ -46,19 +48,44 @@ if($io_select->can_read(0))
 	chomp @extra_options ;
 	}
 	
-for(@ARGV)
-	{
-	display_help() if $_ eq '--help' ;
-	}
-	
 my @command_and_options = (@ARGV, @extra_options) ;
+
+die 'Error parsing options!'unless 
+	GetOptions
+		(
+		'h|help' => \&display_help, 
+		
+		'dump_options' => 
+			sub 
+				{
+				print join "\n", map {"-$_"} 
+					qw(
+					help
+					) ;
+				exit(0) ;
+				},
+		) ;
+	
 
 display_help() unless @command_and_options ;
 
 #------------------------------------------------------------------------------------------------------------------------
 
 sub display_help
-{ 
-print {STDERR} `perldoc $0`  or croak 'Can\'t display help!' ; ## no critic (InputOutput::ProhibitBacktickOperators)
+{
+
+#~ =head2 display_help()
+
+#~ I<Arguments> - None
+
+#~ I<Returns> - Nothing
+
+#~ I<Exceptions> - exits with status code B<1>
+
+#~ =cut
+
+my ($this_script) = ($PROGRAM_NAME =~m/(.*)/sxm ) ;
+
+print {*STDERR} `perldoc $this_script`  or croak 'Error: Can\'t display help!' ; ## no critic (InputOutput::ProhibitBacktickOperators)
 exit(1) ;
 }

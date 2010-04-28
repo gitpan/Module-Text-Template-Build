@@ -97,7 +97,7 @@ if($ENV{'Module_Text_Template_Build_USE_GIT_VERSION_FOR_DIST'})
 	
 	if($have_git)
 		{
-		print `git status -a`;
+		print `git status`;
 		
 		if($self->do_system('git log  --decorate > git_Changes'))
 			{
@@ -147,7 +147,6 @@ my $build = $class->new
 		'File::HomeDir'    => 0,
 		'File::Find::Rule' => 0,
 		},
-	
 	requires => 
 		{
 		'Sub::Exporter' => 0,

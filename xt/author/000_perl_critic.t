@@ -24,6 +24,7 @@ use Test::Perl::Critic
 		'CodeLayout::ProhibitHardTabs',
 		'CodeLayout::ProhibitTrailingWhitespace' ,
 		'ValuesAndExpressions::ProhibitCommaSeparatedStatements', # too many false positives. See RT #27654
+		' NamingConventions::Capitalization', 
 		], 
 		
 	-profile => 'xt/author/perlcriticrc' ;
