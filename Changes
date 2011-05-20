@@ -1,4 +1,10 @@
-commit 427a21f36435bc0b59d62c17600a3eff9037ab34 (HEAD, master)
+commit 4fc9cd37f9be7baf6a01cde5629eda63004a6084 (HEAD, master)
+Author: nadim khemir <nadim@khemir.net>
+Date:   Fri May 20 16:15:15 2011 +0200
+
+    FIXED: Changes files in template was not included in distribution
+
+commit 427a21f36435bc0b59d62c17600a3eff9037ab34
 Author: nadim khemir <nkh@cpan.org>
 Date:   Tue Apr 27 22:32:19 2010 +0200
 

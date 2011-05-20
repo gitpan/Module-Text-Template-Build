@@ -17,6 +17,7 @@ module_template/META.yml
 module_template/Makefile.PL
 module_template/README
 module_template/Todo.txt
+module_template/Changes
 module_template/lib/$MODULE_ROOT+$MODULE_NAME.pm
 module_template/scripts/script
 module_template/t/001_load.t
@@ -50,3 +51,4 @@ xt/author/000_perl_critic.t
 xt/author/perlcriticrc
 
 xt/author/dist/000_prereq.t
+META.json
